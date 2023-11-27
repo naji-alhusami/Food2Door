@@ -10,7 +10,7 @@ import ResponsiveButton from "./ResponsiveButton";
 export default function Navbar() {
   return (
     <Fragment>
-      <nav className="z-10 relative">
+      <nav className="z-30 relative">
         <ResponsiveButton />
         <BasketButton />
       </nav>

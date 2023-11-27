@@ -13,38 +13,16 @@ function Home() {
       <Navbar />
       <div
         style={{
-          backgroundImage: "url(../../../public/Images/homeBg.jpg)",
+          backgroundImage: "url(/Images/homeBg.jpg)",
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",
           backgroundAttachment: "fixed",
         }}
-        className="flex flex-column min-h-screen w-screen text-black font-bold flex justify-between items-center shadow-md relative"
+        className="flex flex-col justify-start items-center min-h-screen w-screen text-black font-bold z-20 shadow-md relative brightness-100"
       >
-        {/* Button for showing navbar in mobile screens */}
-        {/* <div className="flex ml-[2rem] ">
-        <button
-          type="button"
-          className="w-70 flex justify-end items-center"
-          onClick={() => {
-            setShowNavbarInResponsive(!showNavbarInResponsive);
-          }}
-        >
-          <img
-            src={showNavbarInResponsive ? greenx : responsiveNavbar}
-            alt="x-button"
-            className={`w-8 h-8 transform transition-transform duration-500 ease-in-out ${
-              showNavbarInResponsive ? "transform scale-150" : ""
-            }`}
-          />
-        </button>
-      </div> */}
-        {/* <div>
-        <ul className="flex flex-row font-bold absolute left-10 inset-0 text-sm">
-          <li className="mr-12">Home</li>
-          <li className="mr-12">Contact</li>
-          <li className="mr-12">About</li>
-        </ul>
-      </div> */}
+        <h1>Welcome To Burger Restaurant</h1>
+        <h1>Home</h1>
+        <h1>Home</h1>
       </div>
     </>
   );
