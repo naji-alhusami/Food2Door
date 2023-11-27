@@ -13,16 +13,16 @@ function Home() {
       <Navbar />
       <div
         style={{
-          backgroundImage: "url(/Images/homeBg.jpg)",
+          backgroundImage: "url(/Images/homeBg.png)",
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",
           backgroundAttachment: "fixed",
         }}
-        className="flex flex-col justify-start items-center min-h-screen w-screen text-black font-bold z-20 shadow-md relative brightness-100"
+        className="flex flex-col items-start min-h-screen w-screen text-white font-bold z-20 shadow-md relative brightness-100"
       >
-        <h1>Welcome To Burger Restaurant</h1>
-        <h1>Home</h1>
-        <h1>Home</h1>
+        <h1 className="font-pacifico">Tastify</h1>
+        <h2>Home</h2>
+        <h2>Home</h2>
       </div>
     </>
   );
