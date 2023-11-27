@@ -12,8 +12,7 @@
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-
-import Navbar from "./components/Navbar/Navbar";
+// import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
 
 // import ClipLoader from "react-spinners/ClipLoader";
@@ -23,7 +22,7 @@ import "./App.css";
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
+      {/* <Navbar /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         {/* <Route path="/login" element={<Login />} />
