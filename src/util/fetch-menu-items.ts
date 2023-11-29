@@ -1,25 +1,18 @@
-const API_KEY: string = "e633aa666f424a359683e7f437df43de";
-
 class CustomError extends Error {
   code?: number;
   info?: string;
 }
 
-export async function fetchMenuItems(item: string) {
-  let url = `https://api.spoonacular.com/food/menuItems/search?apiKey=${API_KEY}`;
+export async function fetchMenuItems() {
+  const mongodbUrl = process.env.MONGODB_URL;
+  const url = process.env.URL;
 
-  if (
-    item === "burger" ||
-    item === "pizza" ||
-    item === "drinks" ||
-    item === "pasta" ||
-    item === "soup" ||
-    item === "sudhi"
-  ) {
-    url += "&query=" + item + "&number=12";
+  if (!url || !mongodbUrl) {
+    throw new Error("URL is not defined in the environment variables.");
   }
+  const fetch_URL = url + mongodbUrl;
 
-  const response = await fetch(url);
+  const response = await fetch(fetch_URL);
 
   if (!response.ok) {
     const error = new CustomError("An Error Occured While Fetching Data");

@@ -2,9 +2,15 @@ import { MongoClient } from "mongodb";
 
 export async function ConnectToDatabase() {
   try {
-    const client = await MongoClient.connect(
-      "mongodb+srv://najihussami:2eDfDL3wzF7d50DQ@cluster0.p5janj2.mongodb.net/foodOrder?retryWrites=true&w=majority"
-    );
+    const mongodbUrl = process.env.MONGODB_URL;
+
+    if (!mongodbUrl) {
+      throw new Error(
+        "MongoDB URL is not defined in the environment variables."
+      );
+    }
+
+    const client = await MongoClient.connect(mongodbUrl);
 
     await client.close();
 
