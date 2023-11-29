@@ -2,8 +2,11 @@ import Button from "../Ui/Button";
 
 export default function BasketButton() {
   return (
-    <div className=" absolute right-6 top-2 bg-[#ec4899] hover:bg-[#db2777] text-black w-16 h-10 rounded-full rounded-4xl ">
-      <Button element="button" className=" p-2 rounded-full rounded-xl flex flex-row justify-center items-center ">
+    <div className="fixed right-6 top-2 bg-[#ec4899] hover:bg-[#db2777] text-black w-16 h-10 rounded-full rounded-4xl ">
+      <Button
+        element="button"
+        className=" p-2 rounded-full rounded-xl flex flex-row justify-center items-center "
+      >
         <span className="bg-white rounded-full rounded-xl mr-1 px-1">3</span>
         <span className="w-5 h-5">
           <svg

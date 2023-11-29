@@ -1,16 +1,9 @@
-// import homeBg from "../../../public/Images/homeBg.jpg";
-// import { useState } from "react";
-// import Navbar from "../Navbar/Navbar";
-// import greenx from "../../../public/Images/greenx.png";
-// import responsiveNavbar from "../../../public/Images/responsiveNavbar.svg";
 import MainMenu from "../Menu/MainMenu";
 import Navbar from "../Navbar/Navbar";
 import OrderSteps from "../OrderSteps/OrderSteps";
 import Button from "../Ui/Button";
 
 function Home() {
-  // const [showNavbarInResponsive, setShowNavbarInResponsive] = useState(false);
-
   return (
     <>
       <Navbar />

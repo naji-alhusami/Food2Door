@@ -7,7 +7,7 @@ export default function ResponsiveButton() {
   const [showNavbarInResponsive, setShowNavbarInResponsive] = useState(false);
 
   return (
-    <div className="flex justify-center items-center absolute top-2 ml-4 text-black bg-[#ec4899] hover:bg-[#db2777] p-2 rounded-full rounded-4xl lg:ml-12">
+    <div className="flex justify-center items-center fixed top-2 ml-4 text-black bg-[#ec4899] hover:bg-[#db2777] p-2 rounded-full rounded-4xl lg:ml-12">
       {/* <Button
         element="button"
         onClick={() => {
