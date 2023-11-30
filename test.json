@@ -1,38 +1,54 @@
 {
   "BURGER": [
     {
+      "id": "1",
       "name": "Classic Burger",
-      "price": 8.99
+      "price": 8.99,
+      "image": "/Images/cheese-burger.PNG"
     },
     {
+      "id": "2",
       "name": "Cheeseburger",
-      "price": 9.99
+      "price": 9.99,
+      "image": "/Images/cheese-burger.PNG"
     },
     {
-      "name": "Bacon Burger",
-      "price": 10.99
+      "id": "3",
+      "name": "Cheeseburger",
+      "price": 9.99,
+      "image": "/Images/cheese-burger.PNG"
     },
     {
-      "name": "Veggie Burger",
-      "price": 7.99
+      "id": "4",
+      "name": "Cheeseburger",
+      "price": 9.99,
+      "image": "/Images/cheese-burger.PNG"
     }
   ],
   "PIZZA": [
     {
+      "id": "1",
       "name": "Classic pizza",
-      "price": 8.99
+      "price": 8.99,
+      "image": "/Images/cheese-burger.PNG"
     },
     {
+      "id": "2",
       "name": "Cheese pizza",
-      "price": 9.99
+      "price": 9.99,
+      "image": "/Images/cheese-burger.PNG"
     },
     {
-      "name": "Bacon pizza",
-      "price": 10.99
+      "id": "3",
+      "name": "Cheese pizza",
+      "price": 9.99,
+      "image": "/Images/cheese-burger.PNG"
     },
     {
-      "name": "Veggie pizza",
-      "price": 7.99
+      "id": "4",
+      "name": "Cheese pizza",
+      "price": 9.99,
+      "image": "/Images/cheese-burger.PNG"
     }
   ]
 }

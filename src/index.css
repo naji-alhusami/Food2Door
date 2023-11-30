@@ -3,8 +3,7 @@
 @tailwind utilities;
 
 body {
-  font-family: "Pacifico", cursive;
-  font-family: "Roboto", sans-serif;
+  font-family: "Hedvig Letters Serif", "Pacifico", "Roboto", serif;
 }
 
 h1 {

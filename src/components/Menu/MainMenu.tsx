@@ -2,8 +2,8 @@ import { MainMenuData } from "./MainMenu-data";
 import { useQuery } from "@tanstack/react-query";
 import { fetchMenuItems } from "../../util/fetch-menu-items";
 import { type FormEvent, useState } from "react";
-// import MainMenuItemData from "./MainMenyItems";
-// import { type ItemData } from "./MainMenyItems";
+import MainMenuItemData from "./MainMenyItems";
+import { type ItemData } from "./MainMenyItems";
 
 export default function MainMenu() {
   const [itemName, setItemName] = useState("");
@@ -11,7 +11,7 @@ export default function MainMenu() {
 
   const { data, isPending, isError } = useQuery({
     queryKey: ["items", { item: itemName }],
-    queryFn: () => fetchMenuItems(itemName),
+    queryFn: ({ signal }) => fetchMenuItems({ signal, itemName }),
   });
 
   function fetchItemsHandler(event: FormEvent<HTMLFormElement>, item: string) {
@@ -32,8 +32,10 @@ export default function MainMenu() {
   }
 
   if (data) {
-    console.log(data);
-    // content = <MainMenuItemData items={data as ItemData[]} />;
+    if (itemName) {
+      console.log(data);
+      content = <MainMenuItemData items={data as ItemData[]} />;
+    }
   }
 
   return (
