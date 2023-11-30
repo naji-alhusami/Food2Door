@@ -1,19 +1,39 @@
 import { MainMenuData } from "./MainMenu-data";
 import { useQuery } from "@tanstack/react-query";
 import { fetchMenuItems } from "../../util/fetch-menu-items";
-import { type FormEvent, useRef, useState } from "react";
+import { type FormEvent, useState } from "react";
+// import MainMenuItemData from "./MainMenyItems";
+// import { type ItemData } from "./MainMenyItems";
 
 export default function MainMenu() {
-  const itemName = useRef();
-  const [itemData, setItemData] = useState();
+  const [itemName, setItemName] = useState("");
+  // const [items, setItemsData] = useState<ItemData[]>();
 
-  const { data, isPending, isError, error } = useQuery({
-    queryKey: ["items"],
-    queryFn: ({ signal }) => fetchMenuItems({ signal }),
+  const { data, isPending, isError } = useQuery({
+    queryKey: ["items", { item: itemName }],
+    queryFn: () => fetchMenuItems(itemName),
   });
 
-  function fetchItemsHandler(event: FormEvent) {
+  function fetchItemsHandler(event: FormEvent<HTMLFormElement>, item: string) {
     event.preventDefault();
+
+    console.log(item);
+    setItemName(item);
+  }
+
+  let content = <p>Please click on the item wanted</p>;
+
+  if (isPending) {
+    content = <p className="h-32">Loading...</p>;
+  }
+
+  if (isError) {
+    content = <p>Error</p>;
+  }
+
+  if (data) {
+    console.log(data);
+    // content = <MainMenuItemData items={data as ItemData[]} />;
   }
 
   return (
@@ -24,18 +44,18 @@ export default function MainMenu() {
           {MainMenuData.map((menu) => (
             <form
               key={menu.id}
-              onSubmit={fetchItemsHandler}
+              onSubmit={(e) => fetchItemsHandler(e, menu.name)}
               className="mx-4 cursor-pointer hover:text-[#ec4899] flex flex-col justify-center items-center"
             >
               <img src={menu.image} alt={menu.name} />
-              <h2>{menu.name}</h2>
+              <button type="submit" data-itemname={menu.name}>
+                {menu.name}
+              </button>
             </form>
           ))}
         </div>
       </div>
-      <div>
-        <h1>naji</h1>
-      </div>
+      <div>{content}</div>
     </>
   );
 }

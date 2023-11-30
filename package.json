@@ -12,6 +12,7 @@
   "dependencies": {
     "@tanstack/react-query": "^5.8.9",
     "autoprefixer": "^10.4.16",
+    "firebase": "^10.7.0",
     "mongodb": "^6.3.0",
     "postcss": "^8.4.31",
     "react": "^18.2.0",

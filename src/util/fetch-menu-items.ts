@@ -3,25 +3,24 @@ class CustomError extends Error {
   info?: string;
 }
 
-export async function fetchMenuItems() {
-  const mongodbUrl = process.env.MONGODB_URL;
-  const url = process.env.URL;
+export async function fetchMenuItems(itemName: string) {
+  const fetch_URL = `https://food-order-e25e0-default-rtdb.firebaseio.com/${itemName}.json`;
+  console.log(fetch_URL);
 
-  if (!url || !mongodbUrl) {
-    throw new Error("URL is not defined in the environment variables.");
-  }
-  const fetch_URL = url + mongodbUrl;
+  try {
+    const response = await fetch(fetch_URL);
 
-  const response = await fetch(fetch_URL);
+    if (!response.ok) {
+      const error = new CustomError("An Error Occurred While Fetching Data");
+      error.code = response.status;
+      error.info = await response.json();
+      throw error;
+    }
 
-  if (!response.ok) {
-    const error = new CustomError("An Error Occured While Fetching Data");
-    error.code = response.status;
-    error.info = await response.json();
+    const items = await response.json();
+    return items;
+  } catch (error) {
+    console.error(error);
     throw error;
   }
-
-  const { items } = await response.json();
-
-  return items;
 }

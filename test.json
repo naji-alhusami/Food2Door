@@ -1,0 +1,38 @@
+{
+  "BURGER": [
+    {
+      "name": "Classic Burger",
+      "price": 8.99
+    },
+    {
+      "name": "Cheeseburger",
+      "price": 9.99
+    },
+    {
+      "name": "Bacon Burger",
+      "price": 10.99
+    },
+    {
+      "name": "Veggie Burger",
+      "price": 7.99
+    }
+  ],
+  "PIZZA": [
+    {
+      "name": "Classic pizza",
+      "price": 8.99
+    },
+    {
+      "name": "Cheese pizza",
+      "price": 9.99
+    },
+    {
+      "name": "Bacon pizza",
+      "price": 10.99
+    },
+    {
+      "name": "Veggie pizza",
+      "price": 7.99
+    }
+  ]
+}
